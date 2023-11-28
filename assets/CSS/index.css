@@ -1,0 +1,268 @@
+/* 全局设置 */
+body{
+    background-color: #2d2d2d;
+    background-image: url(../Art/image/背景静态.png);
+    /* 将背景图片居中对齐 */
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    /* 全覆盖 */
+    background-size: 1920px 1080px;
+
+    /* 隐藏滚动条 */
+    overflow: hidden;
+}
+
+/* Vue动画内容 */
+.page-fade-enter-active,
+.page-fade-leave-active {
+    transition: opacity 0.5s, transform 0.2s;
+}
+
+.page-fade-enter{
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.page-fade-leave-to {
+    opacity: 0;
+    transform: translateY(100%)
+}
+    /* 帧动画 */
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes slideAndFade {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 主背景 */
+.main_background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    padding: 0;
+}
+
+/* 顶部导航栏 */
+.top_nav{
+    background-color: #161616;
+    padding: 0;
+}
+
+.top_nav>div{
+    padding-right: 0;
+}
+
+.top_nav>div>div>div>ul{
+    position: relative;
+    width: 70%;
+    padding-right: 0;
+    background-color: #061327;
+}
+
+.top_nav li{
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 20px;
+}
+.top_nav li>a{
+    color: #c8c8c8;
+}
+.top_nav li>a:hover {
+    color: #fff;
+}
+
+@media (max-width:768px) {
+    .top_nav>div>div>div>ul {
+        width: 100%;
+        height: 100%;
+    }
+    .top_nav li {
+        width: 100%;
+        margin: auto 0;
+        text-align: center;
+    }
+    .top_nav .offcanvas-body{
+        background-color: #061327;
+    }
+    .top_nav {
+        background-color: #161616;
+        height: 66px;
+    }
+    .top_nav .offcanvas-header{
+        background-color: #c6baa9;
+    }
+}
+
+/* box_left */
+.box_left{
+    position: absolute;
+    width: 15%;
+    margin-top: 200px;
+    border: 2px solid #c3c3c3;
+    border-radius: 10px;
+    background-color: #c3c3c3;
+    min-width: 185px;
+    max-width: 213px;
+    float: left;
+}
+
+/* 版权声明 */
+/* .box_left::after{
+    content: "";
+    position: absolute;
+    margin-top: 3px;
+    width: 130px;
+    height: 10px;
+    background: url("../Art/image/_背景均取自元气桌面互联网资源.png") no-repeat;
+    background-size: 130px 10px;
+} */
+
+.box_left>.my-profile-photo{    
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #c3c3c3;
+}
+.box_left>.my-profile-photo>img{
+    position: absolute;
+    border: 2px solid #c3c3c3;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: #004150;
+}
+.box_left>.list-group-group{
+    background-color: #000000da;
+    padding: 2rem 0.3rem;
+}
+.box_left .list-group>button{
+    background-color: #c3c3c3;
+    display: flex;
+    font-weight: bold;
+}
+.box_left .list-group>button:hover{
+    text-shadow: 0.8px 0.8px #fff;
+    border-right: 10px dotted #d8d8d8;
+}
+.box_left .list-group span{
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width:768px) {
+.box_left{
+    display: none;
+}
+}
+
+/* box_right */
+.box_right{
+    position: absolute;
+    background-color: #00415078;
+    top: 200px;
+    float: right;
+    left: 290px;
+    right: 60px;
+    bottom: 40px;
+    padding: 4px;
+}
+.box_right .box_border{
+    width: 100%;
+    height: 100%;
+    border: 3px double #c3c3c3;
+}
+.box_right .div_show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width:768px){
+    .box_right{
+        left: 0;
+        right: 0;
+    }
+}
+/* 按钮效果 */
+.box_right .div_show>.music_button{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.box_right .div_show>.music_button .button_outside{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 20%;
+    min-width: 80px;
+}
+.box_right .div_show>.music_button .button_outside .image_border{
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    clip-path: polygon(20px 0, 100% 20px, calc(100% - 20px) 100%, 0 calc(100% - 20px));
+    cursor: pointer;
+    animation: rotation 20s infinite linear;
+    animation-play-state: running;
+    animation-direction: reverse;
+    opacity: 1;
+    transition: opacity 0.1s;
+}
+.slide{
+    opacity: 0 !important;
+}
+.box_right .div_show>.music_button .button_outside .image_border>img{
+    animation: rotation 10s infinite linear;
+}
+.box_right .div_show>.music_button .button_outside img{
+    border-radius: 50%;
+    cursor:pointer;
+}
+.box_right .div_show>.music_button .button_outside img:hover{
+    background-color: #00000020;
+}
