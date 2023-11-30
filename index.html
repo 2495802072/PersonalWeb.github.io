@@ -15,68 +15,68 @@
 <body>
 <!-- 挂载Vue -->
     <div id="app">
-    <!-- 背景 -->
+        
+        <!-- 背景 -->
+        <div class="main_background">
+            <video id="video_background" class="d-none d-md-block" id="main_background" autoplay loop muted poster="assets/Art/image/元气-唯美科幻宇宙星球星空.jpg">
+                <source src="assets/Art/video/元气-唯美科幻宇宙星球星空.mp4">
+            </video>
+        </div>
 
-    <div class="main_background">
-        <video id="video_background" class="d-none d-md-block" id="main_background" autoplay loop muted poster="assets/Art/image/元气-唯美科幻宇宙星球星空.jpg">
-            <source src="assets/Art/video/元气-唯美科幻宇宙星球星空.mp4">
-        </video>
-    </div>
-
-    <!-- 顶导航栏 -->
-    <nav class="navbar fixed-top navbar-expand-md top_nav">
-        <div class="container-fluid">
-            <img class="navbar-brand" src="assets/Art/image/顾霖轩.png" alt="LOGO">
-            <button style="background-color: #c6baa9;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">导航栏</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1">
-                        <li class="nav-item"  v-for="(page,index) in pageArray">
-                            <a class="nav-link" aria-current="page" href="#" @click="pagesChanged(index)">{{page.name}}</a>
-                        </li>
-                        <!-- 隔断 -->
-                        <li class="nav-item" style="flex: 1;"></li>
-                        <!-- 跳转链接独自设计样式 -->
-                        <li class="nav-item" style="border-left: 1px solid #fff;">
-                            <a class="nav-link" aria-current="page" href="Personal-Resum.html" target="_blank" style="color: #fff;font-weight: 100;cursor: alias;">个人简历↗</a>
-                        </li>
-                    </ul>
+        <!-- 顶导航栏 -->
+        <nav class="navbar fixed-top navbar-expand-md top_nav">
+            <div class="container-fluid">
+                <img class="navbar-brand" src="assets/Art/image/顾霖轩.png" alt="LOGO">
+                <button style="background-color: #c6baa9;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">导航栏</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <li class="nav-item"  v-for="(page,index) in pageArray">
+                                <a class="nav-link" aria-current="page" href="#" @click="pagesChanged(index)">{{page.name}}</a>
+                            </li>
+                            <!-- 隔断 -->
+                            <li class="nav-item" style="flex: 1;"></li>
+                            <!-- 跳转链接独自设计样式 -->
+                            <li class="nav-item" style="border-left: 1px solid #fff;">
+                                <a class="nav-link" aria-current="page" href="Personal-Resum.html" target="_blank" style="color: #fff;font-weight: 100;cursor: alias;">个人简历↗</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- 左侧导航栏 -->
-    <div class="box_left">
-        <div class="my-profile-photo text-center"><img width="100px" height="100px" src="./assets/Art/image/图标3.png" alt="0.0"></div>
-        <div class="list-group-group mt-2 mb-2">
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action" @click="background_click(true)">背景: <span :style="background_button_span_style">{{background?"开":"关"}}</span></button>
-            <button type="button" class="list-group-item list-group-item-action" @click="background_click(false)">背景音乐: <span :style="background_music_button_span_style">{{background_music?"开":"关"}}</span></button>
+        <!-- 左侧导航栏 -->
+        <div class="box_left">
+            <div class="my-profile-photo text-center"><img width="100px" height="100px" src="./assets/Art/image/图标3.png" alt="0.0"></div>
+            <div class="list-group-group mt-2 mb-2">
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action" @click="background_click(true)">背景: <span :style="background_button_span_style">{{background?"开":"关"}}</span></button>
+                <button type="button" class="list-group-item list-group-item-action" @click="background_click(false)">背景音乐: <span :style="background_music_button_span_style">{{background_music?"开":"关"}}</span></button>
+            </div>
+            <hr style="margin: 1px;">
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action" style="color: #990000;">Godot 游戏项目</button>
+                <button type="button" class="list-group-item list-group-item-action" disabled style="padding: 0;">所有内容均不参与盈利，若有侵权请联系我删除<br>(邮箱：<br>2495802072@qq.com)</button>
+            </div>
+            </div>
         </div>
-        <hr style="margin: 1px;">
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action" style="color: #990000;">Godot 游戏项目</button>
-            <button type="button" class="list-group-item list-group-item-action" disabled style="padding: 0;">所有内容均不参与盈利，若有侵权请联系我删除<br>(邮箱：<br>2495802072@qq.com)</button>
-        </div>
-        </div>
-    </div>
 
-    <audio autoplay :src="musicList[musicCurrentIndex].link" id="BGaudio"></audio>
+        <audio autoplay :src="musicList[musicCurrentIndex].link" id="BGaudio"></audio>
 
-    <!-- 右侧主页面 -->
-    <transition name="page-fade">
-        <component v-bind:is="displayPage" :music-list="musicList" :music-current-index="musicCurrentIndex" @musicindex="ichange"></component>
-    </transition>
+        <!-- 右侧主页面 -->
+        <transition name="page-fade">
+            <component v-bind:is="displayPage" :music-list="musicList" :music-current-index="musicCurrentIndex" @musicindex="ichange"></component>
+        </transition>
 
-    <!-- 页脚 -->
-    <footer></footer>
+        <!-- 页脚 -->
+        <footer><span>copyright &copy; 秦彦悦</span></footer>
     </div>
 
     <script src="assets/js/index.js"></script>

@@ -64,6 +64,14 @@ body{
     }
 }
 
+#app{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
 /* 主背景 */
 .main_background {
     position: fixed;
@@ -265,4 +273,84 @@ body{
 }
 .box_right .div_show>.music_button .button_outside img:hover{
     background-color: #00000020;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+}
+footer span{
+    text-align: center;
+}
+@media (max-width:768px) {
+    footer{
+        display: none;
+    }
+}
+
+.box_right .box_border .home_block{
+    height: 100%;
+    overflow: hidden;
+}
+
+@media (max-width:768px) {
+    .box_right .box_border .home_block{
+        height: 100%;
+        overflow: scroll;
+    }
+}
+
+.box_right .box_border .home_block .Awords{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+.box_right .box_border .home_block .updatas{
+    float: left;
+    background-color: #888888;
+    height: calc(100% - 100px);
+    margin-top: auto;
+}
+.box_right .box_border .home_block .updatas ul{
+    overflow: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    padding: 0;
+    height: calc(100% - 40px);
+}
+.box_right .box_border .home_block .updatas ul::-webkit-scrollbar{
+    width: 2px;
+}
+.box_right .box_border .home_block .updatas ul::-webkit-scrollbar-thumb{
+    background-color: #fff;
+}
+.box_right .box_border .home_block .feedback-operator{
+    border-left: 1px solid #999999;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+}
+.box_right .box_border .home_block .feedback-operator .questions{
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    color: #fff;
+    font-size: 40px;
+}
+.box_right .box_border .home_block .feedback-operator .answers{
+    display: flex;
+    height: 200px;
+}
+.box_right .box_border .home_block .feedback-operator .answers button{
+    margin: auto;
+    height: 80%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: #0041508c;
+    color: #fff;
+    border: 1px solid #fff;
 }
