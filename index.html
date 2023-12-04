@@ -23,6 +23,26 @@
             </video>
         </div>
 
+        <!-- 登录/注册弹窗 -->
+        <div id="loginPopup" class="overlay">
+            <div class="popup">
+                <!-- 表单内容 -->
+                <form style="text-align: center;">
+                    <!-- 表单元素 -->
+                    <label for="username">用户名:</label>
+                    <input type="text" id="username" name="username">
+                    <div class="usernameError" style="display: block;"></div>
+                    <label class="mt-3 mb-3" for="password">密码:</label>
+                    <input type="password" id="password" name="password" autocomplete="current-password">
+                    <div class="passwordError"></div>
+                    <br>
+                    <!-- 登录按钮 -->
+                    <a class="btn" href="#" @click="closePopupRegister('loginPopup')">注册</a>
+                    <a class="btn" href="#" @click="closePopupLogin('loginPopup')">登录</a>
+                </form>
+            </div>
+        </div>
+
         <!-- 顶导航栏 -->
         <nav class="navbar fixed-top navbar-expand-md top_nav">
             <div class="container-fluid">
@@ -42,6 +62,10 @@
                             </li>
                             <!-- 隔断 -->
                             <li class="nav-item" style="flex: 1;"></li>
+                            <!-- 登录/注册 -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" @click="openPopup('loginPopup')">登录/注册</a>
+                            </li>
                             <!-- 跳转链接独自设计样式 -->
                             <li class="nav-item" style="border-left: 1px solid #fff;">
                                 <a class="nav-link" aria-current="page" href="Personal-Resum.html" target="_blank" style="color: #fff;font-weight: 100;cursor: alias;">个人简历↗</a>
@@ -62,13 +86,13 @@
             </div>
             <hr style="margin: 1px;">
             <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action" style="color: #990000;">Godot 游戏项目</button>
-                <button type="button" class="list-group-item list-group-item-action" disabled style="padding: 0;">所有内容均不参与盈利，若有侵权请联系我删除<br>(邮箱：<br>2495802072@qq.com)</button>
+                <a type="button" href="./GodotProject.html" class="list-group-item list-group-item-action" style="color: #990000;">Godot 游戏项目</a>
+                <button type="button" class="list-group-item list-group-item-action" disabled style="flex-direction: column">所有内容均不参与盈利，若有侵权请联系我删除<span style="font-size: 9px;cursor: text;">邮箱：2495802072@qq.com</span></button>
             </div>
             </div>
         </div>
 
-        <audio autoplay :src="musicList[musicCurrentIndex].link" id="BGaudio"></audio>
+        <audio autoplay :src="musicList[musicCurrentIndex].link" id="BGaudio" muted></audio>
 
         <!-- 右侧主页面 -->
         <transition name="page-fade">
@@ -76,7 +100,7 @@
         </transition>
 
         <!-- 页脚 -->
-        <footer><span>copyright &copy; 秦彦悦</span></footer>
+        <footer><span>2023-11-25<br> &copy; 秦彦悦 All rights reserved.</span></footer>
     </div>
 
     <script src="assets/js/index.js"></script>
